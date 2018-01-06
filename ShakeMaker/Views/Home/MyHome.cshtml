@@ -9,11 +9,26 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Hello World</title>
+    <title>ShakeMaker</title>
 </head>
 <body>
     <div> 
-        Welcome to my first MVC Page
+        Welcome to the shake maker site.
     </div>
+
+    <div>
+        Here you can select your cocktails based on the ingredients you have at home!!
+
+        <br />
+        @*@ViewData["CurrentTime"]*@
+        @*<br />*@
+        @*ViewBag.CurrentTime1*@
+
+        @TempData["CurrentTime"]
+        <br />
+        @Session["CurrentTime"]
+
+    </div>
+   
 </body>
 </html>

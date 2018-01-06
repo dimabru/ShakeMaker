@@ -12,6 +12,19 @@ namespace ShakeMaker
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{resource}.config");
+
+            routes.MapRoute(
+                name: "Home",
+                url: "Home/MyHome",
+                defaults: new { controller = "Home", action = "ShowHomePage", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "DefaultPage",
+                url: "",
+                defaults: new { controller = "Home", action = "ShowHomePage", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "Default",

@@ -10,13 +10,19 @@ namespace ShakeMaker.Controllers
     {
         // GET: Home
         public ActionResult Index()
-        { 
-            return View();
+        {
+            // ViewBag.CurrentTime1 = DateTime.Now.ToString();
+            ViewData["CurrentTime"] = DateTime.Now.ToString();
+            TempData["CurrentTime"] = DateTime.Now.ToString();
+            Session["CurrentTime"] = DateTime.Now.ToString();
+            return RedirectToAction("ShowHomePage", "Home");
         }
 
         public ActionResult ShowHomePage()
         {
+            
+            //ViewBag.CurrentTime1 = DateTime.Now.ToString();
             return View("MyHome");
-        }
+         }
     }
 }
