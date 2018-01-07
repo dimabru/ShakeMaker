@@ -5,12 +5,8 @@ using System.Web;
 
 namespace ShakeMaker.Models
 {
-    public class User
+    public class User : superUser
     {
-        public string userName { get; set; }
-
-        public string password { get; set; }
-
         public string email { get; set; }
 
         public List<Cocktails> favCocktails;
@@ -22,6 +18,11 @@ namespace ShakeMaker.Models
             email = emal;
             if (cocktails == null) favCocktails = new List<Cocktails>();
             else favCocktails = new List<Cocktails>(cocktails);
+        }
+
+        public override string getType()
+        {
+            return "RegularUser";
         }
     }
 }
