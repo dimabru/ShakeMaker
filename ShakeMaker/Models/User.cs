@@ -20,7 +20,8 @@ namespace ShakeMaker.Models
             userName = name;
             password = pass;
             email = emal;
-            favCocktails = new List<Cocktails>(cocktails);
+            if (cocktails == null) favCocktails = new List<Cocktails>();
+            else favCocktails = new List<Cocktails>(cocktails);
         }
     }
 }
